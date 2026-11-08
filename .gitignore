@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Saved NASA answers (rebuilt automatically). Snapshots ARE committed: they are the demo fallback.
+backend/data/cache/*
+!backend/data/cache/.gitkeep
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

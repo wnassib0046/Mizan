@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MIZAN</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">⚖</span>
+      <div>
+        <h1>MIZAN</h1>
+        <p class="tag">Is the climate where you live really changing? Weighed with 45 years of NASA data.</p>
+      </div>
+    </div>
+    <span id="status" class="status">connecting…</span>
+  </header>
+
+  <main class="layout">
+    <section class="panel left">
+      <h2 class="step"><span>1</span> Pick a question</h2>
+      <div id="questions" class="questions" role="radiogroup"></div>
+      <p id="definition" class="definition"></p>
+
+      <h2 class="step"><span>2</span> Pick a place <small>click the map or a preset</small></h2>
+      <div id="presets" class="presets"></div>
+      <div id="map" class="map"></div>
+      <div class="compare-row">
+        <button id="compareBtn" class="ghost">+ Compare with another place</button>
+        <span id="compareHint" class="hint" hidden>Now click a second place on the map</span>
+      </div>
+    </section>
+
+    <section class="panel right">
+      <div id="cards" class="cards">
+        <div class="empty">Choose a question and a place to see the verdict.</div>
+      </div>
+      <div class="chart-head">
+        <h2 id="chartTitle">Year by year</h2>
+        <div class="seg" role="tablist">
+          <button data-view="annual" class="on">Annual values</button>
+          <button data-view="anomaly">Monthly anomalies</button>
+        </div>
+      </div>
+      <div id="chart" class="chart"></div>
+      <p id="source" class="source"></p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    Data: NASA POWER (MERRA-2 reanalysis), monthly 1981–2025. Trend: Seasonal Mann-Kendall, Sen's slope, checked with Hamed-Rao and OLS.
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/verdict.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
